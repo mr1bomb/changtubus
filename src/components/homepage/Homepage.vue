@@ -270,13 +270,16 @@ export default {
             dataType: "json",
             //contentType: "application/json",
             success: function (data) {
-              if(data.status_code===0){
+              if(data.status_code===0&&data.data.length>0){
                   //alert(22);
                 that.tableData3 = data.data;
               }else{
                 alert('暂无车次');
                 document.getElementById('cha').style = 'display:block';
                 document.getElementById('td').style = 'display:none';
+                that.form.date = '';
+                that.form.start = '';
+                that.form.end = '';
               }
             },
             error: function (data) {

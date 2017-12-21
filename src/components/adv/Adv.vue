@@ -83,7 +83,7 @@
 		<div class="w3-subscribe agileits-w3layouts">
 			<div class="container">
 				<div class="col-md-6 social-icons w3-agile-icons">
-					<h4 style="margin-top: 20px">加入我们</h4>
+					<h4 style="margin-top: 20px">意见反馈</h4>
 				</div>
 				<div class="col-md-6 w3-agile-subscribe-right">
 					<h3 class="w3ls-title">
@@ -91,7 +91,7 @@
 						<span></span>
 					</h3>
 					<form action="#" method="post">
-            <el-input  style='display: inline-block' placeholder="您的邮箱"></el-input>
+            <el-input  style='display: inline-block' placeholder="您的留言"></el-input>
             <el-button style='display: inline-block;margin-top: 10px' type="primary"  @click="sub()">确认</el-button>
 						<div class="clearfix"> </div>
 					</form>

@@ -239,8 +239,10 @@ export default {
                   if(data.data[i].time===0){
                     //alert(33)
                     data.data[i].time='未发车'
-                  }else{
+                  }else if(data.data[i].time===1){
                     data.data[i].time='已发车'
+                  }else{
+                    data.data[i].time='十分抱歉，因某些特殊原因，该车次被迫取消，请您及时退票，谢谢'
                   }
                 }
                 that.tableData4 = data.data;
@@ -270,7 +272,7 @@ export default {
               if(window.sessionStorage.getItem('tok')) {
                   var that = this;
                 $.ajax({
-                  type: 'put',
+                  type: 'post',
                  /* headers: {
                     "Content-Type": "application/json",
                     "X-HTTP-Method-Override": "PUT" }, //PUT,DELETE*/
@@ -279,7 +281,9 @@ export default {
                     'Authorization': 'Bearer'  +  window.sessionStorage.getItem('tok')
 
                   },*/
-                  url: 'http://localhost/chepiao/public/index.php/v1/order?token='+tok,
+                  //contentType: "application/x-www-form-urlencoded",
+
+                  url: 'http://localhost/chepiao/public/index.php/v1/order/reduce?token='+tok,
                   success: function (data) {
                     if(data.status_code===0){
                       alert('退票成功');
